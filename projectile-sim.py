@@ -30,7 +30,7 @@ class Projectile(Particle):
     def get_max_height(self):
         return self.initial_height + (self.velocity ** 2 * (math.sin(math.radians(self.angle))) ** 2) / (2 * -self.g)
     
-ball = Projectile(velocity=10, angle=45, initial_height=10, dt=0.0025)
+ball = Projectile(velocity=10, angle=45, initial_height=10, dt=0.1)
 print(f"Initial x, y: {ball.get_position()} (m)")
 
 while ball.position[1] >= 0:
