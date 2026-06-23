@@ -31,8 +31,8 @@ class Projectile(Particle):
         return self.initial_height + (self.velocity ** 2 * (math.sin(math.radians(self.angle))) ** 2) / (2 * -self.g)
     
 ball = Projectile(mass=1, velocity=10, angle=45, initial_height=10)
-print(ball.get_position())
+print(f"initial x, y: {ball.get_position()}(m)")
 while ball.position[1] >= 0:
     ball.update_position(0.1)
-print(f"x, y: {ball.get_position()} (m)", f"travel time: {ball.get_time()} s", f"max height: {ball.get_max_height()} m")
+print(f"x, y: {ball.get_position()}(m),", f"travel time: {ball.get_time()}s,", f"max height: {ball.get_max_height()}m")
 
