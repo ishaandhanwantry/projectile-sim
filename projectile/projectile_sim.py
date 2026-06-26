@@ -32,18 +32,20 @@ class Projectile(Particle):
     def get_max_height(self):
         return self.initial_height + (self.velocity ** 2 * (math.sin(math.radians(self.angle))) ** 2) / (2 * -self.g)
 
-# Input Parameters    
-ball = Projectile(velocity=10.0, angle=45.0, initial_height=10.0, dt=0.1)
-print(f"Initial x, y: {ball.get_position()} (m)")
+if __name__ == "__main__":
+    ball = Projectile(velocity=10.0, angle=45.0, initial_height=10.0, dt=0.01)
+    print(f"Initial x, y: {ball.get_position()} (m)")
 
-while ball.position[1] >= 0:
-     
-    last_position = ball.get_position()
-    last_time = ball.get_time()
-    
-    ball.update_position(ball.dt)
+    x_positions = [ball.get_position()[0]]
+    y_positions = [ball.get_position()[1]]
 
-# Output final position, time, and max height
-print(f"Final x, y: ({ball.get_position()[0]:.2f}, {ball.get_position()[1]:.2f}) (m)")
-print(f"Travel time: {ball.get_time():.2f} s")
-print(f"Max height: {ball.get_max_height():.2f} m")
+    while ball.position[1] >= 0:
+        ball.update_position(ball.dt)
+        x_positions.append(ball.get_position()[0])
+        y_positions.append(ball.get_position()[1])
+
+    print(f"Final x, y: ...")
+
+    fig, ax = plt.subplots(figsize=(8, 5))  # <-- moves in here
+    ax.plot(x_positions, y_positions)
+    plt.show()

@@ -1,7 +1,13 @@
 README.md
 pyproject.toml
+projectile/__init__.py
+projectile/projectile_sim.py
 projectile_sim.egg-info/PKG-INFO
 projectile_sim.egg-info/SOURCES.txt
 projectile_sim.egg-info/dependency_links.txt
 projectile_sim.egg-info/requires.txt
 projectile_sim.egg-info/top_level.txt
+tests/test_edgecases.py
+tests/test_outputs.py
+tests/test_params.py
+tests/test_postime.py
